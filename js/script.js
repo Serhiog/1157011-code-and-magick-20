@@ -1,18 +1,17 @@
 // Константы
 var fireballSize = 22;
+var wizardSpeed = 3;
+var wizardWidth = 70;
+
 
 // Поведение фаербола
 function getFireballSpeed (isWindFromLeft) {
-  if (isWindFromLeft) {
-    return 5;
-  } else
-    return 2;
+  isWindFromLeft ? 5 : 2
 }
-
 // Параметры мага
-var wizardSpeed = 3;
-var wizardWidth = 70;
-var WizardHeight = 1.337 * wizardWidth;
+function getWizardHeight () {
+  return 1.337 * wizardWidth;
+}
 
 // Параметры игрового поля
 function getWizardX (gameFieldWidth) {
