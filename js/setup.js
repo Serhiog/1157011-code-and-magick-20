@@ -7,7 +7,7 @@ var COATCOLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)'
 var EYESCOLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 
 // Переменные
-var wizzardTemplate = document.querySelector('#similar-wizard-template').content;
+var wizardTemplate = document.querySelector('#similar-wizard-template').content;
 var setupList = document.querySelector('.setup-similar-list');
 
 // Случайное число от min до (max+1)
@@ -21,7 +21,7 @@ var setup = document.querySelector('.setup');
 setup.classList.remove('hidden');
 
 // Создаем настройки персонажей
-var createCharacter = function () {
+var createWizard = function () {
   return {
     name: NAME[randomInteger(0, NAME.length - 1)] + ' ' + SURNAME[randomInteger(0, NAME.length - 1)],
     coatColor: COATCOLOR[randomInteger(0, COATCOLOR.length - 1)],
@@ -30,32 +30,32 @@ var createCharacter = function () {
 };
 
 // Получаем нужное количество настроек
-var createSetups = function () {
+var createWizards = function () {
   var setups = [];
   for (var i = 0; i <= ITEMSCOUNT - 1; i++) {
-    setups.push(createCharacter(i));
+    setups.push(createWizard(i));
   }
   return setups;
 };
 
-var newWizzards = createSetups();
+var newWizards = createWizards();
 
 // Рендерим волшебников
-var renderWizzards = function () {
+var renderWizards = function () {
   var fragment = new DocumentFragment();
 
-  for (var i = 0; i < newWizzards.length; i++) {
-    var cloneWizzard = wizzardTemplate.cloneNode(true);
-    cloneWizzard.querySelector('.setup-similar-label').textContent = newWizzards[i].name;
-    cloneWizzard.querySelector('.wizard-coat').style.fill = newWizzards[i].coatColor;
-    cloneWizzard.querySelector('.wizard-eyes').style.fill = newWizzards[i].eyesColor;
-    fragment.appendChild(cloneWizzard);
+  for (var i = 0; i < newWizards.length; i++) {
+    var cloneWizard = wizardTemplate.cloneNode(true);
+    cloneWizard.querySelector('.setup-similar-label').textContent = newWizards[i].name;
+    cloneWizard.querySelector('.wizard-coat').style.fill = newWizards[i].coatColor;
+    cloneWizard.querySelector('.wizard-eyes').style.fill = newWizards[i].eyesColor;
+    fragment.appendChild(cloneWizard);
   }
   setupList.appendChild(fragment);
 };
-renderWizzards();
+renderWizards();
 
 // Отображаем интерфейс выбора
-var interfaceWizzards = document.querySelector('.setup-similar');
-interfaceWizzards.classList.remove('hidden');
+var wizardList = document.querySelector('.setup-similar');
+wizardList.classList.remove('hidden');
 
