@@ -4,6 +4,7 @@
 
   window.eventListener = {
 
+
     isAdd: function (target, event, element, classAd, key) {
       target.addEventListener(event, function (evt) {
         if (evt.key === key) {
