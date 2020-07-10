@@ -9,6 +9,7 @@
 
     load: function (onLoad, onError) {
       var xhr = new XMLHttpRequest();
+
       xhr.addEventListener('load', function () {
         if (xhr.status === successCode) {
           onLoad(xhr.response);
