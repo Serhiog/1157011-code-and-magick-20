@@ -33,8 +33,7 @@
     } else {
       return 0;
     }
-  }
-
+  };
 
   var updateWizards = function () {
     window.render(wizards.sort(function (left, right) {
