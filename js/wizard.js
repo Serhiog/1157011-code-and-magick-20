@@ -6,9 +6,11 @@
 
 
   var wizard = {
-    onEyesChange: function (color) { },
-    onCoatChange: function (color) { }
+    onEyesChange: function (newColor) { },
+    onCoatChange: function (newColor) { }
   };
+
+
 
   var getRandomElement = function (array) {
     var randomElementIndex = Math.floor(Math.random() * array.length);
@@ -20,14 +22,12 @@
   var wizardCoatElement = wizardElement.querySelector('.wizard-coat');
   wizardCoatElement.addEventListener('click', function () {
     var newColor = getRandomElement(COATCOLOR);
-    this.style.fill = newColor;
     wizard.onCoatChange(newColor);
   });
 
   var wizardEyesElement = wizardElement.querySelector('.wizard-eyes');
   wizardEyesElement.addEventListener('click', function () {
     var newColor = getRandomElement(EYESCOLOR);
-    this.style.fill = newColor;
     wizard.onEyesChange(newColor);
   });
 
