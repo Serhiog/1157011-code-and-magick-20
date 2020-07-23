@@ -73,7 +73,7 @@
         <div class="setup-user">
           <div class="upload">
             <img class="setup-user-pic" src="./img/user-1.jpg" />
-            <input type="file" name="avatar">
+            <input class="setup-user-pic__chooser" type="file" name="avatar" accept="image/jpeg,image/png">
           </div>
           <label>
             <input id="active" type="text" name="username" maxlength="25" required class="setup-user-name"
@@ -178,8 +178,10 @@
       <p class="setup-similar-label">Петр Петров</p>
     </div>
   </template>
+  <script src="js/avatar.js"></script>
   <script src="js/game.js"></script>
   <script src="js/backend.js"></script>
+  <script src="js/debounce.js"></script>
   <script src="js/wizard.js"></script>
   <script src="js/render.js"></script>
   <script src="js/util.js"></script>
@@ -190,7 +192,8 @@
   <script src="js/toStyleWizard.js"></script>
   <script src="js/createWizards.js"></script>
   <script src="js/dragSetupWindow.js"></script>
-  <script src="js/debounce.js"></script>
+
+
 </body>
 
 </html>
